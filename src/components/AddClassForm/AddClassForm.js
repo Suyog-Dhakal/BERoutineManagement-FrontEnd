@@ -72,7 +72,7 @@ class AddClassForm extends Component {
     this.setState({ programData: res.data });
   };
 
-  onFinish = values => {
+  onFinish = (values) => {
     console.log("Received values of form: ", values.routineFor);
     axios
       .post(apiClassUrl, {
@@ -96,7 +96,7 @@ class AddClassForm extends Component {
       programData,
       teacherData,
       // routineFor,
-      // subjectName,
+      subjectName,
       // teacherName,
       // classCode,
       // classGroup,
@@ -133,7 +133,7 @@ class AddClassForm extends Component {
           >
             <Select
               placeholder="Select a option and change input text above"
-              onChange={value => this.setState({ routineFor: value })}
+              onChange={(value) => this.setState({ routineFor: value })}
               allowClear
             >
               {Object.values(programData).map((item, index) => {
@@ -158,7 +158,7 @@ class AddClassForm extends Component {
           >
             <Select
               placeholder="Select a option and change input text above"
-              onChange={value => this.setState({ weekDay: value })}
+              onChange={(value) => this.setState({ weekDay: value })}
               allowClear
             >
               <Option value="sunday">Sunday</Option>
@@ -221,7 +221,7 @@ class AddClassForm extends Component {
             <Select
               mode="multiple"
               placeholder="Select a option and change input text above"
-              onChange={value => this.setState({ teacherName: value })}
+              onChange={(value) => this.setState({ teacherName: value })}
             >
               {Object.values(teacherData).map((item, index) => {
                 return <Option value={item._id}>{item.teacherName}</Option>;
@@ -457,7 +457,7 @@ class AddClassPopupForm extends Component {
     this.setState({ teacherData: res.data });
   };
 
-  onFinish = values => {
+  onFinish = (values) => {
     const { program, day, index } = this.props;
 
     let programID;
@@ -541,7 +541,7 @@ class AddClassPopupForm extends Component {
             ]}
           >
             <Select
-              onChange={value => this.setState({ subjectName: value })}
+              onChange={(value) => this.setState({ subjectName: value })}
               rules={[
                 {
                   required: true,
@@ -593,7 +593,7 @@ class AddClassPopupForm extends Component {
             <Select
               mode="multiple"
               // placeholder="Select a option and change input text above"
-              onChange={value => this.handleTeacherSelection(value)}
+              onChange={(value) => this.handleTeacherSelection(value)}
               dropdownAlign="bottom"
             >
               {Object.values(teacherData).map((item, index) => {

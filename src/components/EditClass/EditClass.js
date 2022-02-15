@@ -94,15 +94,21 @@ const subjects = [
   "Computer Network",
   "Distributed System",
   "Digital Signal Analysis and Processing",
-  "Elective I",
-
+  "Elective I (Advanced Java Programming)",
+  "Elective I (Data Mining)",
+  "Elective I (Embedded Systems design using ARM)",
   "Project(Part A)",
+
   "Professional Practice",
   "Information Systems",
   "Simulation and Modelling",
   "Internet and Intranet",
-  "Elective II",
-  "Elective III",
+  "Elective II (Agile Software Development)",
+  "Elective II (Networking with IPV6)",
+  "Elective II (Advanced computer architecture)",
+  "Elective III (Multimedia System)",
+  "Elective III (Geographical information system)",
+  "Elective III (Power Electronics)",
   "Project(Part B)",
 ];
 const courseCode = [
@@ -158,15 +164,21 @@ const courseCode = [
   "CT702",
   "CT703",
   "CT704",
-  "CT725",
+  "CT725 01",
+  "CT725 02",
+  "CT725 03",
   "CT707",
 
   "CE752",
   "CT751",
   "CT753",
   "CT754",
-  "CT765",
-  "CT785",
+  "CT765 02",
+  "CT765 03",
+  "CT765 04",
+  "CT785 03",
+  "CT785 07",
+  "CT785 07",
   "CT755",
 ];
 
@@ -224,7 +236,7 @@ class EditClassPopupForm extends Component {
     });
   };
 
-  onFinish = values => {
+  onFinish = (values) => {
     const { program, day, index, id, teacherTable } = this.props;
 
     let programID;
@@ -305,7 +317,7 @@ class EditClassPopupForm extends Component {
           ]}
         >
           <Select
-            onChange={value => this.setState({ subjectName: value })}
+            onChange={(value) => this.setState({ subjectName: value })}
             rules={[
               {
                 required: true,
@@ -357,7 +369,7 @@ class EditClassPopupForm extends Component {
           <Select
             mode="multiple"
             // placeholder="Select a option and change input text above"
-            onChange={value => this.handleTeacherSelection(value)}
+            onChange={(value) => this.handleTeacherSelection(value)}
             dropdownAlign="bottom"
           >
             {Object.values(teacherData).map((item, index) => {
@@ -672,7 +684,7 @@ class EditClass extends Component {
           >
             <Select
               placeholder="Select a option and change input text above"
-              onChange={value => this.setState({ weekDay: value })}
+              onChange={(value) => this.setState({ weekDay: value })}
               allowClear
             >
               <Option value="sunday">Sunday</Option>
